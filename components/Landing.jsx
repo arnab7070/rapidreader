@@ -3,8 +3,17 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Lottie from "lottie-react";
 import animationData from '../assets/lottie/icon.json';
+import { Separator } from './ui/separator';
 import { Button } from './ui/button';
-import { FaLocationArrow } from "react-icons/fa";
+import { TrendingUp } from 'lucide-react';
+import LandingImage from '../assets/svg/landing.svg';
+import Image from 'next/image';
+import FeatureCard from './FeatureCard';
+import AboutUs from './AboutUs';
+import FAQ from './FAQ';
+import featureCards from '@/assets/static/features';
+import faqData from '@/assets/static/faq';
+import NewsPaperSVG from '../assets/svg/newspaper.svg';
 const Landing = () => {
   return (
     <div className="landing-container">
@@ -12,15 +21,10 @@ const Landing = () => {
         <title>Landing Page</title>
         <meta name="description" content="Welcome to Rapid Reader" />
       </Head>
-
       <div className="glass-background"></div>
       <div className="landing-content">
-      <div className='font-bold text-xl text-white'>Your 🫂 Buddy in 🚵 Speedy Life</div>
-        <Lottie
-          animationData={animationData}
-          className="flex justify-center items-center"
-          loop={true}
-        />
+        <div className='flex justify-center font-bold text-xl text-white mt-16'>Your 🫂 Buddy in 🚵 Speedy Life </div>
+        <Image className='flex justify-center' priority={false} src={LandingImage} height={600} width="auto" alt='Landing Image'></Image>
         <h1 className="landing-title">Welcome to <span className='font-bold text-white'>Rapid Reader</span></h1>
         <p className="landing-description">
           Daily Source for News and Books
@@ -29,8 +33,31 @@ const Landing = () => {
           Stay Informed, Read Smart
         </p>
         <Link href={'/news'}>
-          <Button className="mt-5 text-yellow-400 text-lg"><FaLocationArrow className='mr-2' />Let's Explore</Button>
+          <Button className="mt-5 text-yellow-400 text-lg"><TrendingUp strokeWidth={2.5} className='mr-2' />Let's Explore</Button>
         </Link>
+        <div className='flex justify-center'><Separator className='my-5 w-24' /></div>
+        <Lottie
+          animationData={animationData}
+          className="flex justify-center items-center mb-5"
+          loop={true}
+        />
+        <p className='flex justify-center text-white font-extrabold text-4xl'>Features Section</p>
+        <div className='h-auto p-5'>
+          {featureCards.map((value, index) => (
+            <FeatureCard cardDetails={value} key={index} />
+          ))}
+        </div>
+        <div className="flex justify-center my-5"><AboutUs /></div>
+        <div className="flex justify-center my-5"><Image alt='faq' src={NewsPaperSVG} height={300} width="auto"></Image></div>
+          <div className="flex justify-center my-5">
+        <div className="md:w-3/4">
+          <p className='text-white text-4xl font-bold font-sans'>FAQ Section</p>
+          <div className='flex justify-center'><Separator className='my-5 max-w-24 text-center' /></div>
+          {faqData.map((item, index) => (
+            <FAQ faq={item} key={index} />
+          ))}
+        </div>
+      </div>
       </div>
 
       {/* Styles */}

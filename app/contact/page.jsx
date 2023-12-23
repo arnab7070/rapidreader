@@ -1,14 +1,14 @@
 import React from 'react'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-const Books = () => {
-  return (
+const ContactUs = () => {
+  return (  
     <div>
-      <Navbar/>
-      Books
-      <Footer/>
+        <Navbar/>
+        ContactUs
+        <Footer/>
     </div>
   )
 }
 
-export default Books
+export default ContactUs
