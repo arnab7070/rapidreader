@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Calendar } from "@/components/ui/calendar"
 import { CalendarDays, ListChecks } from "lucide-react"
 import NewsCard from './NewsCard';
-
+import { ScrollArea } from "@/components/ui/scroll-area"
 const Sidebar = () => {
   const [date, setDate] = useState(new Date());
   const [data, setData] = useState([]);
@@ -38,7 +38,7 @@ const Sidebar = () => {
       />
       {/* Most Recent Stories */}
       <div className="flex rounded-md font-bold mb-3 p-4 text-lg bg-gray-200"> <ListChecks className='mr-3' />Top Stories</div>
-      <div className='space-y-4'>
+      <ScrollArea className='h-[600px] border-black border rounded-lg shadow-lg p-5'>
         {
           loading ?
             // Render skeleton loaders while data is loading
@@ -51,7 +51,7 @@ const Sidebar = () => {
               <NewsCard key={index} articleData={element} />
             ))
         }
-      </div>
+      </ScrollArea>
     </div>
   );
 };

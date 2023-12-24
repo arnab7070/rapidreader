@@ -25,7 +25,7 @@ const NewsCard = ({ articleData }) => {
   const formattedDate = format(new Date(publishedAt), 'MM/dd/yyyy, h:mm:ss a');
 
   return (
-    <div className="max-w-md bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-400 ease-in-out">
+    <div className="max-w-md bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-400 ease-in-out mb-5">
       <Alert>
         <Newspaper className="h-4 w-4" />
         <AlertTitle>{title}</AlertTitle>
