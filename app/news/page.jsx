@@ -6,6 +6,7 @@ import NewsDetailedCard from '@/components/NewsDetailedCard';
 import { Flame } from 'lucide-react';
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import Footer from '@/components/Footer';
 const News = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -72,6 +73,7 @@ const News = () => {
         </div>
         <Sidebar />
       </div>
+        <Footer/>
     </main>
   );
 };
