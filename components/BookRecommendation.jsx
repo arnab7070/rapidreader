@@ -50,7 +50,7 @@ const BookRecommendation = () => {
                         <div className='flex justify-center'><Button className='-mt-20 z-10' onClick={() => getRecommendation(sessionStorage.getItem("Book"))}>Generate Now</Button></div>
                     </div>
                     :
-                    <div className='flex-col p-4'>
+                    <div className='flex-col p-4 space-y-2'>
                         {recommendation.books.map((book, index) => (
                             <div key={index}>
                                 <p className='text-sm font-semibold'>{`${index + 1}. ${book.title}`}</p>
