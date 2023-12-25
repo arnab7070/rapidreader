@@ -46,7 +46,7 @@ export function LeftSheet() {
                     {/* Render dynamic menu items */}
                     <div className="flex flex-col mt-4">
                         {menuItems.map((menuItem) => (
-                            <Link key={menuItem.href} href={menuItem.href} className={`flex gap-4 text-lg ${isActive(menuItem.href) ? 'text-pink-500' : 'text-black'} mb-4`}>
+                            <Link key={menuItem.href} href={menuItem.href} className={`flex gap-4 text-lg ${isActive(menuItem.href) ? 'text-black' : 'text-gray-500'} mb-4`}>
                             {menuItem.icon}{menuItem.label}
                             </Link>
                         ))}

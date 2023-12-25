@@ -39,24 +39,24 @@ const NewsDetailedCard = ({ articleData }) => {
     <Card className='h-max hover:shadow-2xl transition duration-300 ease-in-out shadow-lg'>
       <CardHeader>
         <img className="w-full h-48 object-cover object-center rounded-lg" src={image} alt={title} />
-        <CardTitle className='line-clamp-3'>{title}</CardTitle>
+        <CardTitle className='line-clamp-3 px-3'>{title}</CardTitle>
       </CardHeader>
-      <CardDescription>
-          <span className="flex-wrap ml-5 bg-pink-100 text-pink-800 text-md font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">{source.name}</span>
+      <CardDescription className='mt-4'>
+          <span className="flex-wrap ml-3 bg-pink-100 text-pink-800 text-md font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">{source.name}</span>
       </CardDescription>
-      <CardContent>
+      <CardContent className='px-3'>
         <Accordion type="single" collapsible>
           <AccordionItem value={title}>
             <AccordionTrigger> <AlignLeft />Read the Summary</AccordionTrigger>
             <AccordionContent>
               {description}
-              <a className='text-blue-600' href={url}>Read More</a>
+             <span>...</span> <a className='text-blue-600' href={url}>Read More</a>
             </AccordionContent>
           </AccordionItem>
         </Accordion>
       </CardContent>
       <CardFooter>
-      <CalendarDays className='text-gray-600 mr-4'/> <p className='text-gray-400'>{formattedDate}</p>
+      <CalendarDays className='text-gray-600 mr-4 mt-4'/> <p className='text-gray-400'>{formattedDate}</p>
       </CardFooter>
     </Card>
   );

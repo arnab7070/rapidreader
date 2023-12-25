@@ -52,7 +52,7 @@ const FeatureCard = ({ cardDetails }) => {
                 </CardContent>
                 <CardFooter className='flex justify-center items-center'>
                     <Link href={cardDetails.url}>
-                        <Button className={`shadow-lg text-white font-mono font-bold`}>
+                        <Button className={`shadow-lg mt-4 text-white font-mono font-bold`}>
                             {cardDetails.footer}
                         </Button>
                     </Link>

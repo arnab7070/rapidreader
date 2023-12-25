@@ -28,16 +28,16 @@ export default function Navbar() {
       <div className="hidden lg:w-full lg:block flex-grow flex-col lg:items-center">
         <div className="text-sm lg:flex-grow flex justify-center items-center">
           {/* Your navigation links go here */}
-          <Link href="/" className={`block lg:inline-block lg:mt-0 text-xl font-semibold ${isActive('/') ? 'text-pink-500' : 'text-slate-200'} mr-4`}>
+          <Link href="/" className={`block lg:inline-block lg:mt-0 text-xl  ${isActive('/') ? 'text-white' : 'text-gray-400'} mr-4`}>
             Home
           </Link>
-          <Link href="/news" className={`block lg:inline-block lg:mt-0 text-xl font-semibold ${isActive('/news') ? 'text-pink-500' : 'text-slate-200'} mr-4`}>
+          <Link href="/news" className={`block lg:inline-block lg:mt-0 text-xl  ${isActive('/news') ? 'text-white' : 'text-gray-400'} mr-4`}>
             News
           </Link>
-          <Link href="/books" className={`block lg:inline-block lg:mt-0 text-xl font-semibold ${isActive('/books') ? 'text-pink-500' : 'text-slate-200'} mr-4`}>
+          <Link href="/books" className={`block lg:inline-block lg:mt-0 text-xl  ${isActive('/books') ? 'text-white' : 'text-gray-400'} mr-4`}>
             Books
           </Link>
-          <Link href="/contact" className={`block lg:inline-block lg:mt-0 text-xl font-semibold ${isActive('/contact') ? 'text-pink-500' : 'text-slate-200'} mr-4`}>
+          <Link href="/contact" className={`block lg:inline-block lg:mt-0 text-xl  ${isActive('/contact') ? 'text-white' : 'text-gray-400'} mr-4`}>
             Contact Us
           </Link>
         </div>

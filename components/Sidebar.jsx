@@ -42,7 +42,7 @@ const Sidebar = () => {
         {
           loading ?
             // Render skeleton loaders while data is loading
-            Array.from({ length: 3 }).map((_, index) => (
+            Array.from({ length: 6 }).map((_, index) => (
               <NewsCard key={index} />
             ))
             :

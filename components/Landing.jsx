@@ -23,7 +23,7 @@ const Landing = () => {
       </Head>
       <div className="glass-background"></div>
       <div className="landing-content">
-        <div className='flex justify-center font-bold text-xl text-white mt-16'>Your 🫂 Buddy in 🚵 Speedy Life </div>
+        <div className='flex justify-center font-bold text-xl text-white mt-10'>Your 🫂 Buddy in 🚵 Speedy Life </div>
         <Image className='flex justify-center' priority={false} src={LandingImage} height={600} width="auto" alt='Landing Image'></Image>
         <h1 className="landing-title">Welcome to <span className='font-bold text-white'>Rapid Reader</span></h1>
         <p className="landing-description">
@@ -35,12 +35,16 @@ const Landing = () => {
         <Link href={'/news'}>
           <Button className="mt-5 text-yellow-400 text-lg"><TrendingUp strokeWidth={2.5} className='mr-2' />Let's Explore</Button>
         </Link>
-        <div className='flex justify-center'><Separator className='my-5 w-24' /></div>
-        <Lottie
-          animationData={animationData}
-          className="flex justify-center items-center mb-5"
-          loop={true}
-        />
+        <div className='flex justify-center'>
+          <Separator className='my-5 w-24' />
+        </div>
+        <div className='flex justify-center'>
+          <Lottie
+            animationData={animationData}
+            className="mb-5"
+            loop={true}
+          />
+        </div>
         <p className='flex justify-center text-white font-extrabold text-4xl'>Features Section</p>
         <div className='h-auto p-5'>
           {featureCards.map((value, index) => (
@@ -49,15 +53,15 @@ const Landing = () => {
         </div>
         <div className="flex justify-center my-5"><AboutUs /></div>
         <div className="flex justify-center my-5"><Image alt='faq' src={NewsPaperSVG} height={300} width="auto"></Image></div>
-          <div className="flex justify-center my-5">
-        <div className="md:w-3/4">
-          <p className='text-white text-4xl font-bold font-sans'>FAQ Section</p>
-          <div className='flex justify-center'><Separator className='my-5 max-w-24 text-center' /></div>
-          {faqData.map((item, index) => (
-            <FAQ faq={item} key={index} />
-          ))}
+        <div className="flex justify-center my-5">
+          <div className="md:w-3/4">
+            <p className='text-white text-4xl font-bold font-sans'>FAQ Section</p>
+            <div className='flex justify-center'><Separator className='my-5 max-w-24 text-center' /></div>
+            {faqData.map((item, index) => (
+              <FAQ faq={item} key={index} />
+            ))}
+          </div>
         </div>
-      </div>
       </div>
 
       {/* Styles */}
