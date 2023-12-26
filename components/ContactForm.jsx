@@ -28,7 +28,7 @@ const ContactForm = () => {
             setLoading(true);
             // Display loading toast
             toast.loading('Sending Message...', {
-                duration: 5000, // Set duration to 0 for indefinite loading
+                duration: 2000, // Set duration to 0 for indefinite loading
                 style: {
                     border: '2px solid black',
                 },
