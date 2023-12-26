@@ -1,8 +1,8 @@
-import { Inter } from 'next/font/google'
+import { Gentium_Book_Plus } from 'next/font/google'
 import './globals.css'
 import { Toaster } from "@/components/ui/sonner"
 
-const inter = Inter({ subsets: ['latin'] })
+const gbp = Gentium_Book_Plus({subsets: ['latin'], weight: ['400']})
 
 export const metadata = {
   title: 'Rapid Reader',
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}><Toaster />{children}</body>
+      <body className={gbp.className}><Toaster />{children}</body>
     </html>
   )
 }
