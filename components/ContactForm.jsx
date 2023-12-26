@@ -28,7 +28,7 @@ const ContactForm = () => {
             setLoading(true);
             // Display loading toast
             toast.loading('Sending Message...', {
-                duration: 0, // Set duration to 0 for indefinite loading
+                duration: 5000, // Set duration to 0 for indefinite loading
                 style: {
                     border: '2px solid black',
                 },
@@ -40,7 +40,7 @@ const ContactForm = () => {
                     toast.success(successMessage, {
                         title: 'Success',
                         description: 'Your message has been sent successfully.',
-                        duration: 6000, // You can customize the duration in milliseconds
+                        duration: 5000, // You can customize the duration in milliseconds
                         position: 'top-center',
                         style: {
                             border: '2px solid black',
