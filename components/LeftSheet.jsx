@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation'
 import Link from 'next/link';
 import { Separator } from "@/components/ui/separator"
-import { Home, Book, Newspaper, Menu, Mail } from "lucide-react";
+import { Home, Book, Newspaper, Menu, Mail, X } from "lucide-react";
 import {
     Sheet,
     SheetClose,
@@ -54,7 +54,7 @@ export function LeftSheet() {
                 </SheetHeader>
                 <SheetFooter>
                     <SheetClose asChild>
-                        <Button type="submit">Close Menu</Button>
+                        <Button type="submit"><X className="mr-2"/>Close Menu</Button>
                     </SheetClose>
                 </SheetFooter>
             </SheetContent>

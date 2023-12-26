@@ -6,6 +6,7 @@ import { Separator } from './ui/separator';
 import axios from 'axios';
 import { Button } from './ui/button';
 import { toast } from 'sonner';
+import { Atom } from 'lucide-react';
 
 const BookRecommendation = () => {
     const [recommendation, setrecommendation] = useState('')
@@ -47,7 +48,7 @@ const BookRecommendation = () => {
                                 loop={true}
                             />
                         </div>
-                        <div className='flex justify-center'><Button className='-mt-20 z-10' onClick={() => getRecommendation(sessionStorage.getItem("Book"))}>Generate Now</Button></div>
+                        <div className='flex justify-center'><Button className='-mt-20 z-10 shadow-lg bg-blue-500 hover:bg-blue-600' onClick={() => getRecommendation(sessionStorage.getItem("Book"))}><Atom className='mr-2' />Generate Now</Button></div>
                     </div>
                     :
                     <div className='flex-col p-4 space-y-2'>

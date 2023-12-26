@@ -40,7 +40,7 @@ const ContactForm = () => {
                     toast.success(successMessage, {
                         title: 'Success',
                         description: 'Your message has been sent successfully.',
-                        duration: 10000, // You can customize the duration in milliseconds
+                        duration: 6000, // You can customize the duration in milliseconds
                         position: 'top-center',
                         style: {
                             border: '2px solid black',
@@ -56,7 +56,7 @@ const ContactForm = () => {
                     toast.error(errorMessage, {
                         title: 'Failed',
                         description: error.text,
-                        duration: 10000, // You can customize the duration in milliseconds
+                        duration: 6000, // You can customize the duration in milliseconds
                         position: 'top-center',
                         style: {
                             border: '2px solid black',

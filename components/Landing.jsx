@@ -2,7 +2,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Lottie from "lottie-react";
-import animationData from '../assets/lottie/icon.json';
+import animationData from '../assets/lottie/landing.json';
 import { Separator } from './ui/separator';
 import { Button } from './ui/button';
 import { TrendingUp } from 'lucide-react';
@@ -13,7 +13,7 @@ import AboutUs from './AboutUs';
 import FAQ from './FAQ';
 import featureCards from '@/assets/static/features';
 import faqData from '@/assets/static/faq';
-import NewsPaperSVG from '../assets/svg/newspaper.svg';
+import NewsPaperSVG from '../assets/svg/faq.svg';
 const Landing = () => {
   return (
     <div className="landing-container">
@@ -82,8 +82,8 @@ const Landing = () => {
           width: 100%;
           height: 100%;
           background: linear-gradient(45deg, rgba(255, 140, 0, 0.8), rgba(128, 0, 128, 0.8)); /* Orangish-Purplish gradient with transparency */
-          backdrop-filter: blur(10px); /* Apply the blur effect */
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Very light shadow */
+          backdrop-filter: blur(50px); /* Apply the blur effect */
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Very light shadow */
           z-index: 0;
         }
 
