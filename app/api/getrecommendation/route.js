@@ -7,11 +7,12 @@ export async function POST(req, res) {
     });
     try {
         const chatCompletion = await openaiServer.chat.completions.create({
-            messages: [{ role: 'user', content: `Can you recommend 10 books related to ${body.question} to read except this book? Provide me in json format.` }],
+            messages: [{ role: 'user', content: `Can you recommend 10 books related to ${body.question} to read except this book? Provide me in json format containing books array with only title of the books.` }],
             model: 'gpt-3.5-turbo-1106',
             response_format: { type: "json_object" }
         });
-        return NextResponse.json({ result: chatCompletion.choices[0].message.content, question:body.question, success: true });
+        console.log(chatCompletion);
+        return NextResponse.json({ result: JSON.parse(chatCompletion.choices[0].message.content), question: body.question, success: true });
     } catch (error) {
         console.error('Error fetching OpenAI completion:', error);
     }

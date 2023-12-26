@@ -22,9 +22,7 @@ const BookRecommendation = () => {
             });
             if (response.data.success) {
                 toast.success('Your response has been generated.', { position: 'top-right', style: { background: '#99f6e4' } });
-                const jsonString = response.data.result;
-                const jsonObject = JSON.parse(jsonString);
-                setrecommendation(jsonObject);
+                setrecommendation(response.data.result);
             }
             else throw new Error(response.data.result);
         } catch (error) {
@@ -54,8 +52,8 @@ const BookRecommendation = () => {
                     <div className='flex-col p-4 space-y-2'>
                         {recommendation.books.map((book, index) => (
                             <div key={index}>
-                                <p className='text-sm font-semibold'>{`${index + 1}. ${book.title}`}</p>
-                                <Separator/>
+                                <p className='text-sm font-semibold'>{`${index + 1}. ${book}`}</p>
+                                <Separator className='mt-1'/>
                             </div>
                         ))}
                         <p className='font-medium font-sans text-gray-600 mt-10'>As you embark on your literary journey 🚀, I hope these recommendations become cherished companions 📚💖. Happy reading! 🌟✨</p>

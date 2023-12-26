@@ -8,9 +8,9 @@ export async function POST(req, res) {
     try {
         const chatCompletion = await openaiServer.chat.completions.create({
             messages: [{ role: 'user', content: `Please provide a summary of the book ${body.question} in 150-200 words.` }],
-            model: 'gpt-3.5-turbo-0613',
+            model: 'gpt-3.5-turbo-0301',
         });
-        return NextResponse.json({ result: chatCompletion.choices[0].message.content, question:body.question, success: true });
+        return NextResponse.json({ result: chatCompletion.choices[0].message.content, question: body.question, success: true });
     } catch (error) {
         console.error('Error fetching OpenAI completion:', error);
     }
