@@ -26,7 +26,7 @@ const BookRecommendation = () => {
             }
             else throw new Error(response.data.result);
         } catch (error) {
-            toast.error('This is a free trial. Please try again later.', { position: 'top-right', style: { background: '#fecdd3' } });
+            toast.error('Something went wrong! Please try again later.', { position: 'top-right', style: { background: '#fecdd3' } });
         }
     };
     return (
@@ -53,7 +53,7 @@ const BookRecommendation = () => {
                         {recommendation.books.map((book, index) => (
                             <div key={index}>
                                 <p className='text-sm font-semibold'>{`${index + 1}. ${book}`}</p>
-                                <Separator className='mt-1'/>
+                                <Separator className='mt-1' />
                             </div>
                         ))}
                         <p className='font-medium font-sans text-gray-600 mt-10'>As you embark on your literary journey 🚀, I hope these recommendations become cherished companions 📚💖. Happy reading! 🌟✨</p>
