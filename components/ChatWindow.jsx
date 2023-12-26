@@ -35,7 +35,7 @@ const ChatWindow = () => {
         }
         try {
             sessionStorage.setItem('Book',inputValue);
-            toast.loading('AI is typing...', { position: 'top-right', duration: 10000 })
+            toast.loading('AI is typing...', { position: 'top-right', duration: 7000 })
             const response = await axios.post('/api/getsummary', {
                 question: inputValue, // Adjust the property name based on your API expectations
             });

@@ -16,7 +16,7 @@ const BookRecommendation = () => {
                 toast.error("Please generate a summary for a book before requesting recommendations.");
                 return;
             }
-            toast.loading('Generating your personalized recommedation...', { position: 'top-right', duration: 10000 })
+            toast.loading('Generating your personalized recommedation...', { position: 'top-right', duration: 6000 })
             const response = await axios.post('/api/getrecommendation', {
                 question: inputValue, // Adjust the property name based on your API expectations
             });
