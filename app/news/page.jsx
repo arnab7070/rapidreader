@@ -7,6 +7,7 @@ import { Flame } from 'lucide-react';
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import Footer from '@/components/Footer';
+import axios from 'axios';
 
 const News = () => {
   const [data, setData] = useState([]);
@@ -19,6 +20,7 @@ const News = () => {
 
   const fetchData = async () => {
     try {
+      let generalData;
       setLoading(true);
       let apiUrl = `https://gnews.io/api/v4/search?apikey=${process.env.NEXT_PUBLIC_GNEWS_API}&sortBy=publishedAt&country=in&max=30`;
       // Check if there is a search keyword
@@ -28,10 +30,20 @@ const News = () => {
         // If no search keyword, use a default query, e.g., "trending"
         apiUrl += `&q=trending`;
       }
+      const res = await axios.post('/api/getcache', {"url": apiUrl});
+      const {cacheData} = res.data;
+      if(cacheData) {
+        generalData = cacheData;
+        setData(generalData);
+        setLoading(false);
+        return;
+      }
       const response = await fetch(apiUrl);
       const result = await response.json();
-      const generalData = result.articles ? result.articles : [];
+      generalData = result.articles ? result.articles : [];
+      console.log(generalData);
       setData(generalData);
+      await axios.put('/api/getcache', {"url": apiUrl, "data": generalData});
       setLoading(false);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -74,7 +86,7 @@ const News = () => {
         </div>
         <Sidebar />
       </div>
-        <Footer/>
+      <Footer />
     </main>
   );
 };
