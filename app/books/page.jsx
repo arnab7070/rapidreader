@@ -14,7 +14,7 @@ const Books = () => {
         <ScrollArea  className='bg-slate-200 h-screen md:w-2/3 lg:w-9/12'><BookGallery/></ScrollArea >
         <div className='flex-col md:w-1/3 lg:w-3/12'>
           <ScrollArea className='h-3/5 bg-orange-100'><ChatWindow/></ScrollArea>
-          <ScrollArea className='h-[400px] md:h-2/5 lg:h-[290px] bg-blue-50'><BookRecommendation/></ScrollArea>
+          <ScrollArea className='h-[400px] md:h-2/5 lg:h-[40vh] bg-blue-50'><BookRecommendation/></ScrollArea>
         </div>
       </div>
       <Footer />

@@ -35,10 +35,11 @@ const ChatWindow = () => {
         }
         try {
             sessionStorage.setItem('Book',inputValue);
-            toast.loading('AI is typing...', { position: 'top-right', duration: 7000 })
+            toast.loading('AI is summarizing...', { position: 'top-right', duration: 7000 })
             const response = await axios.post('/api/getsummary', {
                 question: inputValue, // Adjust the property name based on your API expectations
             });
+            toast.dismiss();
             if (response.data.success) {
                 toast.success('Your response has been generated.', { position: 'top-right', style: { background: '#99f6e4' } });
                 setShowIcons(false); // Hide icons when data arrives

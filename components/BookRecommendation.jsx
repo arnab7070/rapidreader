@@ -20,6 +20,7 @@ const BookRecommendation = () => {
             const response = await axios.post('/api/getrecommendation', {
                 question: inputValue, // Adjust the property name based on your API expectations
             });
+            toast.dismiss();
             if (response.data.success) {
                 toast.success('Your response has been generated.', { position: 'top-right', style: { background: '#99f6e4' } });
                 setrecommendation(response.data.result);
