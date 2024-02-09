@@ -15,9 +15,9 @@ async function recommendBooks(bookName) {
 
 export async function POST(req, res) {
     const body = await req.json();
-    const openaiServer = new OpenAI({
-        apiKey: process.env.OPENAI_API_KEY,
-    });
+    // const openaiServer = new OpenAI({
+    //     apiKey: process.env.OPENAI_API_KEY,
+    // });
     try {
         // const chatCompletion = await openaiServer.chat.completions.create({
         //     messages: [{ role: 'user', content: `Can you recommend 10 books related to ${body.question} to read except this book? Provide me in json format containing books array with only title of the books.` }],
@@ -28,7 +28,7 @@ export async function POST(req, res) {
         // return NextResponse.json({ result: JSON.parse(chatCompletion.choices[0].message.content), question: body.question, success: true });
         return NextResponse.json({ result: JSON.parse(chatCompletion), question: body.question, success: true });
     } catch (error) {
-        console.error('Error fetching OpenAI completion:', error);
+        console.error('Error fetching chat completion:', error);
     }
     return NextResponse.json({ message: "Server is up and running", method: "POST" })
 }
