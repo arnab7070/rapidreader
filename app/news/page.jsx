@@ -22,7 +22,7 @@ const News = () => {
     try {
       let generalData;
       setLoading(true);
-      let apiUrl = `https://gnews.io/api/v4/search?apikey=${process.env.NEXT_PUBLIC_GNEWS_API}&sortBy=publishedAt&country=in&max=30`;
+      let apiUrl = `https://gnews.io/api/v4/search?q=example&apikey=${process.env.NEXT_PUBLIC_GNEWS_API}&sortBy=publishedAt&country=in&max=30`;
       // Check if there is a search keyword
       if (searchKeyword) {
         apiUrl += `&q=${encodeURIComponent(searchKeyword.trim())}`;
