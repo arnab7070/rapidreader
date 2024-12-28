@@ -1,15 +1,35 @@
 import { NextResponse } from 'next/server'
 import OpenAI from 'openai';
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenerativeAI, SchemaType } from "@google/generative-ai";
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+const schema = {
+    description: "Summary of a book",
+    type: SchemaType.OBJECT,
+    properties: {
+        summary: {
+            type: SchemaType.STRING,
+            description: "A concise summary of the book in 150-200 words",
+            nullable: false,
+        },
+    },
+    required: ["summary"],
+};
+
+const model = genAI.getGenerativeModel({
+    model: "gemini-1.5-pro",
+    generationConfig: {
+        responseMimeType: "application/json",
+        responseSchema: schema,
+    },
+});
 
 async function generateSummary(question) {
     const prompt = `Please provide a summary of the book ${question} in 150-200 words.`;
     const result = await model.generateContent(prompt);
-    const response = result.response;
-    const text = response.text();
-    return text;
+    const response = result.response.text(); // Get the response as a JSON string
+    const parsedResponse = JSON.parse(response); // Parse the JSON
+    return parsedResponse.summary; // Extract and return the summary
 }
 
 export async function POST(req, res) {

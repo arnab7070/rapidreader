@@ -20,7 +20,7 @@ const BookGallery = () => {
 
   const fetchData = async () => {
     try {
-      let apiUrl = `https://www.googleapis.com/books/v1/volumes?maxResults=20`;
+      let apiUrl = `https://www.googleapis.com/books/v1/volumes?maxResults=20&key=${process.env.NEXT_PUBLIC_GOOGLE_BOOKS_API_KEY}`;
       // Check if there is a search keyword
       if (searchKeyword) {
         apiUrl += `&q=${encodeURIComponent(searchKeyword.trim())}`;
@@ -32,7 +32,7 @@ const BookGallery = () => {
       const result = await response.json();
       if (result && result.items && result.items.length > 0) {
         setdata(result.items);
-        if(apiUrl != 'https://www.googleapis.com/books/v1/volumes?maxResults=20&q=coding') toast.success('Searching Successfully Done'); 
+        if(apiUrl != `https://www.googleapis.com/books/v1/volumes?maxResults=20&key=${process.env.NEXT_PUBLIC_GOOGLE_BOOKS_API_KEY}&q=coding`) toast.success('Searching Successfully Done'); 
       } else {
         toast.error("No results found");
       }
